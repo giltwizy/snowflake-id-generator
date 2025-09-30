@@ -10,8 +10,9 @@ public class SnowflakeIDService {
 
     private final Snowflake snowflake;
 
-    public SnowflakeIDService(@Value("${snowflake.worker-id:1}") long workerId,
-                              @Value("${snowflake.datacenter-id:1}") long datacenterId) {
+
+    public SnowflakeIDService(@Value("${snowflake.worker-id}") long workerId,
+                              @Value("${snowflake.datacenter-id}") long datacenterId) {
         this.snowflake = IdUtil.getSnowflake(workerId, datacenterId);
     }
 
